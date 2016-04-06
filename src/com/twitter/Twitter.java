@@ -3,6 +3,12 @@ package com.twitter;
 import java.util.LinkedList;
 import com.twitter.poruke.TwitterPoruka;
 
+/**
+ * public klasa Twitter
+ * 
+ * @author Natasa Vatres
+ */
+
 public class Twitter {
 
 	/**
@@ -11,21 +17,22 @@ public class Twitter {
 	private LinkedList<TwitterPoruka> poruke = new LinkedList<TwitterPoruka>();
 
 	/**
-	 * public metoda vratiSvePoruke()
+	 * public metoda vratiSvePoruke() koja vraca sve poruke na Twitteru
 	 * 
-	 * @return metoda vraca listu svih poruka na Twitteru
+	 * @return metoda vraca listu svih poruka
 	 */
 	public LinkedList<TwitterPoruka> vratiSvePoruke() {
 		return poruke;
 	}
 
 	/**
-	 * public metoda unesi()
+	 * public metoda unesi() koja kreira objekat TwitterPoruka i dodaje na kraj
+	 * liste poruka na Twitteru
 	 * 
 	 * @param korisnik
-	 *            ime korisnika
+	 *            ime usera na Twitteru
 	 * @param poruka
-	 *            tekst koji korisnik objavljuje na Twitteru
+	 *            tekst koji se objavljuje na Twitter
 	 */
 	public void unesi(String korisnik, String poruka) {
 
@@ -37,15 +44,15 @@ public class Twitter {
 	}
 
 	/**
-	 * public metoda vratiPoruke()
+	 * public metoda vratiPoruke() koja vraca sve poruke sa odredjenim tagom
 	 * 
-	 * @param maxBroj
-	 *            najveci broj poruka sa odredjenim tagom
 	 * @param tag
-	 *            trazeni tag
-	 * @return niz poruka sa odredjenim tagom
+	 *            rec koja predstavlja filter za pretragu
+	 * @param maxBroj
+	 *            najveci broj poruka sa trazenim tagom
+	 * @return TwitterPoruka[]
 	 * @throws RuntimeException
-	 *             metoda baca exception
+	 *             metoda baca izuzetak ako je uneti tag null ili prazan String
 	 */
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag == null || tag == "")
